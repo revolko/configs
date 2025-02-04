@@ -1,0 +1,4 @@
+line-length = 127
+[lint]
+preview = true
+select = ["E3", "E4", "E5", "E7", "E9", "W", "F", "PD", "B", "A"]
