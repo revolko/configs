@@ -10,3 +10,6 @@ sudo dnf install $dependencies
 
 echo "Install latest NeoVim"
 ./neovim.sh
+
+echo "Install TMUX"
+./tmux.sh
