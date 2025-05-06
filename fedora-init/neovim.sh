@@ -1,7 +1,5 @@
 #!/bin/bash
 
-RepoRoot=$(cd "$(dirname $BASH_SOURCE)" && cd ../ && pwd)
-
 echo "Downloading latest NeoVim"
 curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
 
@@ -18,7 +16,7 @@ source ~/.bashrc
 
 echo "Copy NeoVim config"
 rm -rf ~/.config/nvim
-cp -r $RepoRoot/nvchad ~/.config/
+cp -r $REPO_ROOT/nvchad ~/.config/
 mv ~/.config/nvchad ~/.config/nvim
 
 echo "Cleanup NeoVim archive"
