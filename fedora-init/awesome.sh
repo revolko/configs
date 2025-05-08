@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install awesome
+sudo dnf install awesome X
 
 echo "start awesome at startup"
 echo "exec awesome" > ~/.xinitrc
@@ -17,11 +17,3 @@ DesktopName=Awesome
 " | sudo tee /usr/share/gnome-session/sessions/awesome.session
 
 curl https://raw.githubusercontent.com/awesomeWM/awesome/master/awesome.desktop | sudo tee /usr/share/xsessions/awesome.desktop
-# echo "[Desktop Entry]
-# Version=1.0
-# Type=Application
-# Name=Awesome
-# Comment=The awesome launcher!
-# TryExec=/usr/bin/awesome
-# Exec=/usr/bin/awesome
-# " | sudo tee /usr/share/applications/awesome.desktop
