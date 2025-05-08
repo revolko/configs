@@ -13,3 +13,9 @@ echo "Install latest NeoVim"
 
 echo "Install TMUX"
 ./tmux.sh
+
+echo "Install ghostty"
+./ghostty.sh
+
+echo "Install awesome"
+./awesome.sh
