@@ -19,3 +19,6 @@ echo "Install ghostty"
 
 echo "Install awesome"
 ./awesome.sh
+
+echo "Install zsh"
+./zsh.sh
