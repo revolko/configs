@@ -22,4 +22,6 @@ echo "install plugins dependencies"
 
 sudo dnf -y install acpid pavucontrol
 git clone https://github.com/vicious-widgets/vicious.git
+
+rm -rf ~/.config/awesome/vicious
 mv vicious ~/.config/awesome/
