@@ -17,3 +17,9 @@ DesktopName=Awesome
 " | sudo tee /usr/share/gnome-session/sessions/awesome.session
 
 curl https://raw.githubusercontent.com/awesomeWM/awesome/master/awesome.desktop | sudo tee /usr/share/xsessions/awesome.desktop
+
+echo "install plugins dependencies"
+
+sudo dnf -y install acpid pavucontrol
+git clone https://github.com/vicious-widgets/vicious.git
+mv vicious ~/.config/awesome/
