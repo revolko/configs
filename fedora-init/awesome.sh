@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo dnf install awesome X
+sudo dnf -y install awesome X akmod-nvidia
 
 echo "start awesome at startup"
 echo "exec awesome" > ~/.xinitrc
