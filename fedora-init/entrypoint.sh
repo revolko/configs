@@ -22,3 +22,6 @@ echo "Install awesome"
 
 echo "Install zsh"
 ./zsh.sh
+
+echo "Install devops tools"
+./devops.sh
