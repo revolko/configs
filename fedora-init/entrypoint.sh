@@ -25,3 +25,6 @@ echo "Install zsh"
 
 echo "Install devops tools"
 ./devops.sh
+
+echo "Install comfort apps"
+./comfort.sh
