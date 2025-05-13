@@ -1,0 +1,7 @@
+window-padding-x = 0
+window-padding-y = 0
+window-padding-balance = true
+theme = Monokai Pro Machine
+font-family = JetBrainsMonoNl Nerd Font
+font-size = 9
+window-decoration = none
