@@ -31,12 +31,6 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- configuring single server, example: typescript
--- lspconfig.ts_ls.setup {
---   on_attach = nvlsp.on_attach,
---   on_init = nvlsp.on_init,
---   capabilities = nvlsp.capabilities,
--- }
 lspconfig.rust_analyzer.setup({
   on_attach = nvlsp.on_attach,
   capabilities = nvlsp.capabilities,
@@ -52,33 +46,61 @@ lspconfig.rust_analyzer.setup({
 })
 
 local python_servers = {
-  "pyright",
-  "ruff_lsp",
+  -- pyright = {
+  --   pyright = {
+  --     -- Using Ruff's import organizer
+  --     disableOrganizeImports = true,
+  --   },
+  --   python = {
+  --     analysis = {
+  --       -- Ignore all files for analysis to exclusively use Ruff for linting
+  --       ignore = { '*' },
+  --     },
+  --   },
+  -- },
+  jedi_language_server = {},
+  ruff = {},
 }
 
-lspconfig.ruff_lsp.setup({
-  on_attach = nvlsp.on_attach,
-  capabilities = nvlsp.capabilities,
-  filetypes = {"python"},
-})
+for name, settings in pairs(python_servers) do
+  lspconfig[name].setup {
+    on_attach = nvlsp.on_attach,
+    on_init = nvlsp.on_init,
+    capabilities = nvlsp.capabilities,
+    filetypes = {"python"},
+    settings = settings,
+  }
+end
 
-lspconfig.pyright.setup({
+lspconfig["ts_ls"].setup {
   on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
   capabilities = nvlsp.capabilities,
-  filetypes = {"python"},
-  settings = {
-    pyright = {
-      -- Using Ruff's import organizer
-      disableOrganizeImports = true,
-    },
-    python = {
-      analysis = {
-        -- Ignore all files for analysis to exclusively use Ruff for linting
-        ignore = { '*' },
-      },
-    },
-  },
-})
+}
+
+-- lspconfig.ruff.setup({
+--   on_attach = nvlsp.on_attach,
+--   capabilities = nvlsp.capabilities,
+--   filetypes = {"python"},
+-- })
+--
+-- lspconfig.pyright.setup({
+--   on_attach = nvlsp.on_attach,
+--   capabilities = nvlsp.capabilities,
+--   filetypes = {"python"},
+--   settings = {
+--     pyright = {
+--       -- Using Ruff's import organizer
+--       disableOrganizeImports = true,
+--     },
+--     python = {
+--       analysis = {
+--         -- Ignore all files for analysis to exclusively use Ruff for linting
+--         ignore = { '*' },
+--       },
+--     },
+--   },
+-- })
 
 --for _, lsp in ipairs(python_servers) do
 --  lspconfig[lsp].setup({

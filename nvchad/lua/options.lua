@@ -12,10 +12,13 @@ local opt = vim.opt
 opt.nu = true
 opt.relativenumber = true
 opt.scrolloff = 8
+opt.clipboard = ""
 
 require "nvim-treesitter.configs".setup{
   auto_install = true
 }
+
+vim.g.rest_nvim = {}
 
 -- disable weird TAB jumping TODO: does not work
 autocmd('ModeChanged', {
@@ -29,3 +32,17 @@ autocmd('ModeChanged', {
     end
   end
 })
+
+-- autocmd("VimEnter", {
+--   group = augroup("capslockstuff", { clear = true }),
+--   callback = function()
+--     vim.cmd("!setxkbmap -option caps:escape")
+--   end,
+-- })
+-- 
+-- autocmd("VimLeave", {
+--   group = augroup("capslockstuff", { clear = true }),
+--   callback = function()
+--     vim.cmd("!setxkbmap -option")
+--   end,
+-- })

@@ -5,7 +5,7 @@ local plugins = {
       ensure_installed = {
         "rust-analyzer",
         "ruff-lsp",
-        "pyright",
+        "jedi-language-server",
       },
     },
   },
@@ -50,6 +50,17 @@ local plugins = {
             -- Configuration here, or leave empty to use defaults
         })
     end
+  },
+  {
+    "rest-nvim/rest.nvim",
+    ft= {"http"},
+    dependencies = {
+      "nvim-treesitter/nvim-treesitter",
+      opts = function (_, opts)
+        opts.ensure_installed = opts.ensure_installed or {}
+        table.insert(opts.ensure_installed, "http")
+      end,
+    }
   },
 }
 

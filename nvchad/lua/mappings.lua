@@ -43,3 +43,7 @@ map('n', '<leader>tb', gitsigns.toggle_current_line_blame, { desc = "GIT blame l
 map('n', '<leader>gd', gitsigns.diffthis, { desc = "GIT diff this"})
 map('n', '<leader>gD', function() gitsigns.diffthis('~') end, { desc = "GIT diff this at ~"})
 map('n', '<leader>td', gitsigns.toggle_deleted, { desc = "GIT toggle delete"})
+map('', '<leader>y', '"+y', { desc = "Yank to clipboard"}) -- E.g: <leader>yy will yank current line to os clipboard
+map('', '<leader>Y', '"+y$', { desc = "Yank until EOL to clipboard"})
+map('n', '<leader>p', '"+p', { desc = "Paste after cursor from clipboard"})
+map('n', '<leader>P', '"+P', { desc = "Paste before cursor from clipboard"})
