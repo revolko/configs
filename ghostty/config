@@ -5,3 +5,4 @@ theme = Monokai Pro Machine
 font-family = JetBrainsMonoNl Nerd Font
 font-size = 9
 window-decoration = none
+cursor-invert-fg-bg = true
