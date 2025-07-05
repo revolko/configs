@@ -14,7 +14,7 @@ opt.relativenumber = true
 opt.scrolloff = 8
 opt.clipboard = ""
 
-require "nvim-treesitter.configs".setup{
+require "nvim-treesitter.configs".setup {
   auto_install = true
 }
 
@@ -33,13 +33,19 @@ autocmd('ModeChanged', {
   end
 })
 
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.ex", "*.exs", "*.lua" },
+  callback = function()
+    vim.lsp.buf.format()
+  end
+})
 -- autocmd("VimEnter", {
 --   group = augroup("capslockstuff", { clear = true }),
 --   callback = function()
 --     vim.cmd("!setxkbmap -option caps:escape")
 --   end,
 -- })
--- 
+--
 -- autocmd("VimLeave", {
 --   group = augroup("capslockstuff", { clear = true }),
 --   callback = function()

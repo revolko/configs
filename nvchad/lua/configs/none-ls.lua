@@ -12,7 +12,8 @@ local opts = {
     }),
   },
   on_attach = function(client, bufnr)
-    if client.supports_method("textDocument/formatting") then
+    -- if client.supports_method("textDocument/formatting") then
+    if vim.bo.filetype == "elixir" then
       vim.api.nvim_clear_autocmds({
         group = augroup,
         buffer = bufnr,
@@ -21,7 +22,7 @@ local opts = {
         group = augroup,
         buffer = bufnr,
         callback = function()
-          vim.lsp.buf.format({ bufnr = bufnr })
+          vim.lsp.buf.formatting_sync({ bufnr = bufnr })
         end,
       })
     end

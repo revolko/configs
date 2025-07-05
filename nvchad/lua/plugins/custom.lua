@@ -6,6 +6,7 @@ local plugins = {
         "rust-analyzer",
         "ruff-lsp",
         "jedi-language-server",
+        "elixir-ls",
       },
     },
   },
@@ -36,7 +37,7 @@ local plugins = {
   },
   {
     "nvimtools/none-ls.nvim",
-    ft = {"python"},
+    filetypes = {"python", "elixir"},
     opts = function()
       return require "configs.none-ls"
     end,

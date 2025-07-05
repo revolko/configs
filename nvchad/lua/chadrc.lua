@@ -14,4 +14,10 @@ M.base46 = {
 	-- },
 }
 
+-- M.mason.pkgs = {
+--   "pyright",
+--   "ruff",
+--   "rust-analyzer",
+-- }
+
 return M

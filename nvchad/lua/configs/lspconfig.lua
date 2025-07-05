@@ -78,34 +78,10 @@ lspconfig["ts_ls"].setup {
   capabilities = nvlsp.capabilities,
 }
 
--- lspconfig.ruff.setup({
---   on_attach = nvlsp.on_attach,
---   capabilities = nvlsp.capabilities,
---   filetypes = {"python"},
--- })
---
--- lspconfig.pyright.setup({
---   on_attach = nvlsp.on_attach,
---   capabilities = nvlsp.capabilities,
---   filetypes = {"python"},
---   settings = {
---     pyright = {
---       -- Using Ruff's import organizer
---       disableOrganizeImports = true,
---     },
---     python = {
---       analysis = {
---         -- Ignore all files for analysis to exclusively use Ruff for linting
---         ignore = { '*' },
---       },
---     },
---   },
--- })
-
---for _, lsp in ipairs(python_servers) do
---  lspconfig[lsp].setup({
---    on_attach = nvlsp.on_attach,
---    capabilities = nvlsp.capabilities,
---    filetypes = {"python"},
---  })
---end
+lspconfig["elixirls"].setup {
+  cmd = {"elixir-ls"},
+  on_attach = nvlsp.on_attach,
+  on_init = nvlsp.on_init,
+  capabilities = nvlsp.capabilities,
+  filetypes = {"elixir"},
+}
