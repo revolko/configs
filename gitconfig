@@ -21,6 +21,7 @@
     rc = rebase --continue
     
     p = push
+    poc = "!git push --set-upstream origin $(git current-branch)"
     pf = push --force
     
     pl = pull
@@ -40,5 +41,7 @@
 
     # list aliases
     la = "!git config -l | grep alias | cut -c 7-"
+
+    current-branch = "!git rev-parse --abbrev-ref HEAD"
 [interactive]
 	diffFilter = diff-so-fancy --patch
